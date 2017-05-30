@@ -24,6 +24,8 @@ class JobController extends Controller
 
     public function checkFiles(Request $request){
 
+       // dd($request);
+
         $contents1 = File::get($request->file('img'));
         $contents2 = File::get($request->file('img2'));
 
@@ -31,8 +33,8 @@ class JobController extends Controller
 
             $firstLine = explode ("\r\n",$contents1);
             $secondLine = explode ("\r\n",$contents2);
-
-            return $this-> checkLines($firstLine, $secondLine);
+$answer = $this-> checkLines($firstLine, $secondLine);
+            return view('welcome',compact('answer'));
 
         }else return 'Ошибка ввода';
 

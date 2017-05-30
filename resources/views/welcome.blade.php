@@ -23,12 +23,13 @@
         </form>
     </div>
     <div id="upload">
-        <form method="post" action="javascript:void(null);" onsubmit="doMagic()" id="formFile">
+        <form method="post" action="{{ url('/chekFile') }}" onsubmit="doMagic()" id="formFile" enctype="multipart/form-data">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            <input type="hidden" name="_method" value="PUT">
+            <input type="hidden" name="_method" value="POST">
              <p>
-                 <input type="file">
-                 <input type="file">
+                 <label for="img" class="control-label col-md-2 ">Загрузка файлов</label>
+                 <input type="file" name="img" id="img">
+                 <input type="file" name="img2" id="img2">
              </p>
             <input name="submit" class="button" type="submit" value="Отправить" />
         </form>
@@ -47,7 +48,13 @@
         </form>
     </div>
 
-    <div id="answer"></div>
+    <div id="answer">
+
+        @if(isset($answer))
+
+            {{dd($answer)}}
+        @endif
+    </div>
 
     <script>
 
@@ -71,6 +78,21 @@
               //  console.log('input viden');
             }
             if ($( "#upload" ).is(':visible')) {
+                var file   = $('#formFile').serialize();
+                $.ajax({
+                    type: 'POST',
+                    url: '{{ url('/chekFile') }}',
+                    data: file,
+                    success: function(data) {
+                      //  $('#answer').text(data);
+
+                     //   console.log(data);
+                    },
+                    error:  function(xhr, str){
+                        console.log('Не успех');
+                        //  alert('Возникла ошибка: ' + xhr.responseCode);
+                    }
+                });
                 console.log('upload viden');
             }
             if ($( "#urls" ).is(':visible')) {

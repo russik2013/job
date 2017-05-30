@@ -15,3 +15,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::post('/chekText', 'JobController@checkTexts');
+Route::post('/chekFile', 'JobController@checkFiles');
