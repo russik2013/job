@@ -27,7 +27,7 @@
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <input type="hidden" name="_method" value="POST">
              <p>
-                 <label for="img" class="control-label col-md-2 ">Загрузка файлов</label>
+                 <label for="img" class="control-label col-md-2 ">Загрузка файлов (только *.txt)</label>
                  <input type="file" name="img" id="img">
                  <input type="file" name="img2" id="img2">
              </p>
