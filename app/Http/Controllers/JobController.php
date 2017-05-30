@@ -63,14 +63,12 @@ class JobController extends Controller
                             $Answer [] = '+';
                             $Answer [][] = $secondLine[$i];
                             $finalMass[] = '+';
-                        }
-                        else
+                        }else
                             if($firstLine[$i] == $secondLine[$i]) {
                                 $Answer [] = 'n';
                                 $Answer [][] = $secondLine[$i];
                                 $finalMass[] = 'ничего';
-                            }
-                                else {
+                            }else {
                                     $Answer [] = '*';
                                     $Answer [][] = $secondLine[$i];
                                     $Answer [][] = $firstLine[$i];
@@ -121,14 +119,12 @@ class JobController extends Controller
                                 $Answer [] = '+';
                                 $Answer [][] = $secondLine[$i];
                                 $finalMass[] = '+';
-                            }
-                            else
+                            }else
                                 if($firstLine[$i] == $secondLine[$i]) {
                                     $Answer [] = 'n';
                                     $Answer [][] = $secondLine[$i];
                                     $finalMass[] = 'ничего';
-                                }
-                                else {
+                                }else {
                                     $Answer [] = '*';
                                     $Answer [][] = $secondLine[$i];
                                     $Answer [][] = $firstLine[$i];
