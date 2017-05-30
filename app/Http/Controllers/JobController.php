@@ -99,14 +99,14 @@ class JobController extends Controller
 
                     }
 
-                    
+
 
                     for($i = 0; $i < count($newFirstLine); $i++){
                         $firstLine[$flagForSecond + $i] = $newFirstLine[$i];
                     }
 
                     for($i = 0; $i <= count($firstLine) - count($secondLine); $i++){
-                        $firstLine[] = null;
+                        $secondLine[] = null;
                     }
                     for($i = 0; $i < count($secondLine); $i++){
 
